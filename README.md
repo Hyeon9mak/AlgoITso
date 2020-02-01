@@ -1,4 +1,6 @@
 # AlgoITso Team Repository
+광운대학교 컴퓨터정보공학부 학부생 4명이 이용하는 공동 저장소  
+
 ## 조원
 - 주재훈 (팀장)
 - 박동현
@@ -9,5 +11,5 @@
 - (미정)
   - Projects 탭 참고
   
-## 참고자료 (URL)
-- [Wiki 탭 참고](https://github.com/Hyeon9mak/AlgoITso/wiki/%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C-(URL))
+## AlgoITso Team Repository 사용법
+- [Wiki 탭 참고]()
