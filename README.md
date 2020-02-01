@@ -10,4 +10,4 @@
   - Projects 탭 참고
   
 ## 참고자료 URL 내역
-- Wiki 탭 
+- Wiki 탭 참고
