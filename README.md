@@ -1,18 +1,29 @@
 # AlgoITso Team Repository
-광운대학교 컴퓨터정보공학부 학부생 4명이 이용하는 공동 저장소  
+광운대학교 AlgoITso팀 저장소  
 
-## 조원
+## 팀원
 - 주재훈 (팀장)
+    - 학과 : 컴퓨터정보공학부
+    - 학번 : 2015722001
 - 박동현
+    - 학과 : 컴퓨터정보공학부
+    - 학번 : 2015722099
 - 최진호
+    - 학과 : 컴퓨터정보공학부
+    - 학번 : 2015722065
 - 최현구
+    - 학과 : 컴퓨터정보공학부
+    - 학번 : 2015722010
   
-## 진행 프로젝트
-- (미정)
+## 진행 중인 프로젝트
+- (프로젝트명 미정)
   - Projects 탭 참고
-  
+
+## 완료 프로젝트
+- 없음
+
 ## AlgoITso Team Repository 사용법
-- [Wiki 탭 참고]()
+- [Wiki 참고]()
 
 ## 임시입력
 - [RISS 피부 유/수분 검색](http://www.riss.kr/search/Search.do?isDetailSearch=N&searchGubun=true&viewYn=OP&queryText=&strQuery=%EC%84%9C%EA%B2%BD%EB%8C%80%ED%95%99%EA%B5%90+%EC%9C%A0%EB%B6%84&exQuery=&exQueryText=&order=&onHanja=&strSort=&p_year1=&p_year2=&iStartCount=0&orderBy=&fsearchMethod=search&sflag=1&isFDetailSearch=N&pageNumber=1&resultKeyword=&fsearchSort=&fsearchOrder=&limiterList=&limiterListText=&facetList=&facetListText=&fsearchDB=&icate=bib_t&colName=bib_t&pageScale=10&query=%ED%94%BC%EB%B6%80+%EC%9C%A0%E2%80%A4%EC%88%98%EB%B6%84)
