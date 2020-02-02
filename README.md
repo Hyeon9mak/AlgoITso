@@ -22,7 +22,7 @@
 ## 완료 프로젝트
 - 없음
 
-## AlgoITso Team Repository 사용법
-- [Wiki 참고]()
+## More information of AlgoITso Team
+- [Wiki 참고](https://github.com/Hyeon9mak/AlgoITso/wiki)
 
 
