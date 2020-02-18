@@ -17,12 +17,12 @@
   
 ## 진행 중인 프로젝트
 - LG 뷰티케어
-  - Projects 탭 참고
+  - [Projects 탭](https://github.com/Hyeon9mak/AlgoITso/projects/4) 참고
 
 ## 완료 프로젝트
 - 없음
 
 ## More information of AlgoITso Team
-- [Wiki 참고](https://github.com/Hyeon9mak/AlgoITso/wiki)
+- [Wiki](https://github.com/Hyeon9mak/AlgoITso/wiki) 참고
 
 
