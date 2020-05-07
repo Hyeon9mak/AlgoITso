@@ -11,7 +11,7 @@
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/backBtn"
+        android:id="@+id/back_btn"
         android:src="@drawable/backbtn"
         android:background="#29335D"
         android:layout_margin="10dp"/>
@@ -83,6 +83,7 @@
         android:inputType="textEmailAddress"
         android:layout_gravity="center_horizontal"/>
     <Button
+        android:id="@+id/join_btn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/joinbtnbackground"
