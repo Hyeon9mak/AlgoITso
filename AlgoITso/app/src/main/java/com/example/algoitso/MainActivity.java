@@ -55,7 +55,11 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
                     Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.side_album) {
                     //앨범 기능
-                    Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
+                    Intent intent_album = new Intent();
+                    intent_album.setType("image/*");
+                    intent_album.setAction(Intent.ACTION_GET_CONTENT);
+                    startActivityForResult(intent_album,1);
+                    finish();
                 } else if (id == R.id.side_analysis) {
                     //분석 기능
                     Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
@@ -85,13 +89,9 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.pore_btn:
-                Intent intent_pore = new Intent(getApplicationContext(), CameraTwo.class);
-                startActivity(intent_pore);
-                finish();
-                break;
             case R.id.wrinkle_btn:
-                Intent intent_wrinkle = new Intent(getApplicationContext(), CameraTwo.class);
-                startActivity(intent_wrinkle);
+                Intent intent_camera = new Intent(getApplicationContext(), CameraActivity.class);
+                startActivity(intent_camera);
                 finish();
                 break;
 
