@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@drawable/joinbackground"
     android:orientation="vertical">
 
@@ -29,14 +29,14 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="50sp"
-        android:id="@+id/editText1"
+        android:id="@+id/edit_Email"
         android:paddingLeft="20dp"
         android:hint="E-mail"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/edittextbackground"
         android:inputType="textEmailAddress"
         android:layout_gravity="center_horizontal"/>
@@ -44,12 +44,12 @@
         android:layout_width="300dp"
         android:layout_height="50sp"
         android:paddingLeft="20dp"
-        android:id="@+id/editText2"
+        android:id="@+id/edit_Passwd"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="30dp"
         android:hint="Password"
         android:background="@drawable/edittextbackground"
         android:inputType="textPassword"
@@ -57,27 +57,13 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="50sp"
-        android:id="@+id/editText3"
+        android:id="@+id/edit_Name"
         android:paddingLeft="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="13dp"
-        android:hint="Password Confirm"
-        android:background="@drawable/edittextbackground"
-        android:inputType="textPassword"
-        android:layout_gravity="center_horizontal"/>
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50sp"
-        android:id="@+id/editText4"
-        android:paddingLeft="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="30dp"
         android:hint="이름"
         android:inputType="textPersonName"
         android:background="@drawable/edittextbackground"
@@ -85,14 +71,14 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="50sp"
-        android:id="@+id/editText5"
+        android:id="@+id/edit_Phone"
         android:hint="전화번호"
         android:paddingLeft="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/edittextbackground"
         android:inputType="phone"
         android:layout_gravity="center_horizontal"/>
@@ -105,9 +91,13 @@
         android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"/>
 
-
-
-
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_progress"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
 
 </LinearLayout>
