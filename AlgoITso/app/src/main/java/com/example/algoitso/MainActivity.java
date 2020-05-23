@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,8 +49,9 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
                 String title = menuItem.getTitle().toString();
 
                 if (id == R.id.side_logout) {
-                    //로그아웃 기능
-                    Toast.makeText(context, title , Toast.LENGTH_SHORT).show();
+                    Intent intent_logout = new Intent(getApplicationContext(), InitActivity.class);
+                    startActivity(intent_logout);
+                    finish();
                 } else if (id == R.id.side_editinfo) {
                     //회원 정보 수정 기능
                     Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
         switch (view.getId()){
             case R.id.pore_btn:
             case R.id.wrinkle_btn:
-                Intent intent_camera = new Intent(getApplicationContext(), CameraActivity.class);
+                Intent intent_camera = new Intent(getApplicationContext(), LaunchActivity.class);
                 startActivity(intent_camera);
                 finish();
                 break;

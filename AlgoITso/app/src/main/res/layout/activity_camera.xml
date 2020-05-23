@@ -26,13 +26,13 @@
             android:src="@drawable/convert_btn"
             android:background="#00000000"/>
 
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="450dp"
-            android:src="@drawable/faceframe"
-            android:layout_marginBottom="80dp"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="450dp"-->
+<!--            android:src="@drawable/faceframe"-->
+<!--            android:layout_marginBottom="80dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
