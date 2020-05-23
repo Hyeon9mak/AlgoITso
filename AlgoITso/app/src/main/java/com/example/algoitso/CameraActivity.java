@@ -114,17 +114,6 @@ public class CameraActivity extends AppCompatActivity {
                 finish();
             }
         });
-        final ImageButton btn_lefttoright = (ImageButton) findViewById(R.id.lefttoright_btn);
-        btn_lefttoright.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                i=1-i;
-                if(i==0)
-                    btn_lefttoright.setImageResource(R.drawable.righttoleft);
-                else
-                    btn_lefttoright.setImageResource(R.drawable.lefttoright);
-            }
-        });
         ImageButton btn_convert = (ImageButton) findViewById(R.id.convert_btn);
         btn_convert.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -311,7 +300,6 @@ public class CameraActivity extends AppCompatActivity {
     };
 
     public void takePicture(){
-
         try{
             CaptureRequest.Builder captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureRequestBuilder.addTarget(imageReader.getSurface());

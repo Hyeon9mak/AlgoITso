@@ -124,9 +124,12 @@ public class LoginActivity extends AppCompatActivity{
                 LoginResponse result = response.body();
                 Toast.makeText(LoginActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
                 showProgress(false);
-                Intent intent_login = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent_login);
-                finish();
+
+                if(result.getCode()==200) {
+                    Intent intent_login = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent_login);
+                    finish();
+                }
             }
 
             @Override

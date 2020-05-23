@@ -17,13 +17,7 @@
             android:src="@drawable/menu_cam"
             android:layout_gravity="top|left"
             android:background="#00000000"/>
-        <ImageButton
-            android:id="@+id/lefttoright_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/lefttoright"
-            android:layout_gravity="top|center_horizontal"
-            android:background="#00000000"/>
+
         <ImageButton
             android:id="@+id/convert_btn"
             android:layout_width="50dp"

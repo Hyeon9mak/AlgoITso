@@ -3,10 +3,10 @@ package com.example.algoitso;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginData {
-    @SerializedName("UserEmail")
+    @SerializedName("userEmail")
     String userEmail;
 
-    @SerializedName("UserPwd")
+    @SerializedName("userPwd")
     String userPwd;
 
     public LoginData(String userEmail, String userPwd) {
