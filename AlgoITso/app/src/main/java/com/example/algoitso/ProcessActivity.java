@@ -20,6 +20,9 @@ import java.io.InputStream;
 
 public class ProcessActivity extends AppCompatActivity {
 
+    String getImgURL = "";
+    String getImgName = "";
+
     public Bitmap img;
     private static final int REQUEST_CODE = 0;
     private ImageView imageView;
@@ -112,6 +115,24 @@ public class ProcessActivity extends AppCompatActivity {
 
         return path;
 
+    }
+
+    // 선택된 이미지 파일명 가져오기
+    public String getImageNameToUri(Uri data)
+    {
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor cursor = getContentResolver().query(data, proj, null, null, null);
+        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+
+        cursor.moveToFirst();
+
+        String imgPath = cursor.getString(column_index);
+        String imgName = imgPath.substring(imgPath.lastIndexOf("/")+1);
+
+        getImgURL = imgPath;
+        getImgName = imgName;
+
+        return "success";
     }
 
 

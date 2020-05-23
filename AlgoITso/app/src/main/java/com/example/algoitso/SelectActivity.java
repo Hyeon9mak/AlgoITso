@@ -22,7 +22,9 @@ import java.net.URL;
 public class SelectActivity extends AppCompatActivity {
 
     final String uploadFilePath = "/mnt/sdcard/Pictures/";
-    final String uploadFileName = "20200523-103121.jpg";
+    // 이부분 고칠 것 ***********************************************************
+    final String uploadFileName = "20200524_125551.jpg";
+    // 이부분 고칠 것 ***********************************************************
     int serverResponseCode = 0;
     String upLoadServerUri = null;
 
@@ -32,8 +34,9 @@ public class SelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select);
 
         ImageButton btn_pore = (ImageButton) findViewById(R.id.pore_btn);
-        upLoadServerUri = "주소 입력해주세요.";
-
+        // 이부분 고칠 것 ***********************************************************
+        upLoadServerUri = "jinho/pore";
+        // 이부분 고칠 것 ***********************************************************
         btn_pore.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -108,7 +111,7 @@ public class SelectActivity extends AppCompatActivity {
                 dos = new DataOutputStream(conn.getOutputStream());
 
                 dos.writeBytes(twoHyphens + boundary + lineEnd);
-                dos.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
+                dos.writeBytes("Content-Disposition: form-data; name=\"img\";filename=\""
                         + fileName + "\"" + lineEnd);
 
                 dos.writeBytes(lineEnd);
