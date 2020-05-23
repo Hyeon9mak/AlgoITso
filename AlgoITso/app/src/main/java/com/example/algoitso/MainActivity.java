@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
                 return true;
             }
         });
-        ImageButton btn_pore = (ImageButton) findViewById(R.id.pore_btn);
-        btn_pore.setOnClickListener(this);
-        ImageButton btn_wrinkle = (ImageButton) findViewById(R.id.wrinkle_btn);
-        btn_wrinkle.setOnClickListener(this);
+        ImageButton btn_take_pic = (ImageButton) findViewById(R.id.take_pic_btn);
+        btn_take_pic.setOnClickListener(this);
+        ImageButton btn_gallery = (ImageButton) findViewById(R.id.gallery_btn);
+        btn_gallery.setOnClickListener(this);
 
     }
 
@@ -90,10 +90,14 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.pore_btn:
-            case R.id.wrinkle_btn:
-                Intent intent_camera = new Intent(getApplicationContext(), LaunchActivity.class);
-                startActivity(intent_camera);
+            case R.id.take_pic_btn:
+                Intent intent_take_pic = new Intent(getApplicationContext(), LaunchActivity.class);
+                startActivity(intent_take_pic);
+                finish();
+                break;
+            case R.id.gallery_btn:
+                Intent intent_gallery = new Intent(getApplicationContext(), ProcessActivity.class);
+                startActivity(intent_gallery);
                 finish();
                 break;
 

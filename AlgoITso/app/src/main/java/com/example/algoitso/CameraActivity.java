@@ -55,7 +55,9 @@ import android.widget.Toast;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.sql.Savepoint;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -200,7 +202,6 @@ public class CameraActivity extends AppCompatActivity {
         mHandler = new Handler(handlerThread.getLooper());
         Handler mainHandler = new Handler(getMainLooper());
         try {
-            //String mCameraId = "" + CameraCharacteristics.LENS_FACING_FRONT; // 후면 카메라 사용
 
             CameraManager mCameraManager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
             CameraCharacteristics characteristics = mCameraManager.getCameraCharacteristics(mCameraId);
@@ -306,7 +307,7 @@ public class CameraActivity extends AppCompatActivity {
     public void takePicture() {
 
         try {
-            CaptureRequest.Builder captureRequestBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);//用来设置拍照请求的request
+            CaptureRequest.Builder captureRequestBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureRequestBuilder.addTarget(mImageReader.getSurface());
             captureRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
             captureRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
@@ -406,6 +407,9 @@ public class CameraActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             Toast.makeText(CameraActivity.this, "사진을 저장하였습니다.", Toast.LENGTH_SHORT).show();
+            Intent intent_process = new Intent(getApplicationContext(), ProcessActivity.class);
+            startActivity(intent_process);
+            finish();
         }
 
         @Override
@@ -417,7 +421,12 @@ public class CameraActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            insertImage(getContentResolver(), bitmap, ""+System.currentTimeMillis(), "");
+            long now = System.currentTimeMillis();
+            Date mDate = new Date(now);
+
+            SimpleDateFormat simpleDate = new SimpleDateFormat("yyyyMMdd_hhmmss");
+            String getTime = simpleDate.format(mDate);
+            insertImage(getContentResolver(), bitmap, ""+getTime, "");
 
             return null;
         }

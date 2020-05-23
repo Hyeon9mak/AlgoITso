@@ -37,24 +37,24 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/pore_btn"
+            android:id="@+id/take_pic_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="180dp"
             android:layout_marginBottom="20dp"
             android:background="#00000000"
-            android:src="@drawable/pore_btn" />
+            android:src="@drawable/take_pic_btn" />
 
         <ImageButton
-            android:id="@+id/wrinkle_btn"
+            android:id="@+id/gallery_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/pore_btn"
+            android:layout_below="@+id/take_pic_btn"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="#00000000"
-            android:src="@drawable/wrinkle_btn" />
+            android:src="@drawable/gallery_take_btn" />
 
     </RelativeLayout>
 
