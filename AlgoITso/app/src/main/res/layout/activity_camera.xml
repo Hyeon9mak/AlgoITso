@@ -17,13 +17,7 @@
             android:src="@drawable/menu_cam"
             android:layout_gravity="top|left"
             android:background="#00000000"/>
-        <ImageButton
-            android:id="@+id/lefttoright_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/lefttoright"
-            android:layout_gravity="top|center_horizontal"
-            android:background="#00000000"/>
+
         <ImageButton
             android:id="@+id/convert_btn"
             android:layout_width="50dp"
@@ -32,12 +26,13 @@
             android:src="@drawable/convert_btn"
             android:background="#00000000"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/eyeframe"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="80dp"/>
+<!--        <ImageView-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="450dp"-->
+<!--            android:src="@drawable/faceframe"-->
+<!--            android:layout_marginBottom="80dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

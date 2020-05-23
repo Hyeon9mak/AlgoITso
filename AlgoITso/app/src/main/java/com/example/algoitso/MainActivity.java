@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,8 +49,9 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
                 String title = menuItem.getTitle().toString();
 
                 if (id == R.id.side_logout) {
-                    //로그아웃 기능
-                    Toast.makeText(context, title , Toast.LENGTH_SHORT).show();
+                    Intent intent_logout = new Intent(getApplicationContext(), InitActivity.class);
+                    startActivity(intent_logout);
+                    finish();
                 } else if (id == R.id.side_editinfo) {
                     //회원 정보 수정 기능
                     Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
@@ -67,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
                 return true;
             }
         });
-        ImageButton btn_pore = (ImageButton) findViewById(R.id.pore_btn);
-        btn_pore.setOnClickListener(this);
-        ImageButton btn_wrinkle = (ImageButton) findViewById(R.id.wrinkle_btn);
-        btn_wrinkle.setOnClickListener(this);
+        ImageButton btn_take_pic = (ImageButton) findViewById(R.id.take_pic_btn);
+        btn_take_pic.setOnClickListener(this);
+        ImageButton btn_gallery = (ImageButton) findViewById(R.id.gallery_btn);
+        btn_gallery.setOnClickListener(this);
 
     }
 
@@ -88,10 +90,14 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.pore_btn:
-            case R.id.wrinkle_btn:
-                Intent intent_camera = new Intent(getApplicationContext(), CameraActivity.class);
-                startActivity(intent_camera);
+            case R.id.take_pic_btn:
+                Intent intent_take_pic = new Intent(getApplicationContext(), LaunchActivity.class);
+                startActivity(intent_take_pic);
+                finish();
+                break;
+            case R.id.gallery_btn:
+                Intent intent_gallery = new Intent(getApplicationContext(), ProcessActivity.class);
+                startActivity(intent_gallery);
                 finish();
                 break;
 
