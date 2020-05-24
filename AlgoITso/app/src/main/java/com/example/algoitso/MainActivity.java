@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
 
     DrawerLayout drawerLayout;
     Context context = this;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
         actionBar.setHomeAsUpIndicator(R.drawable.side_menu);   //사이드 메뉴 버튼 이미지 지정
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.navi_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
                 menuItem.setChecked(true);
                 drawerLayout.closeDrawers();
 
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
 
                 if (id == R.id.side_logout) {
                     Intent intent_logout = new Intent(getApplicationContext(), InitActivity.class);
+                    //SharedPreference.removeAttribute(getApplicationContext(),"useremail");
                     startActivity(intent_logout);
                     finish();
                 } else if (id == R.id.side_editinfo) {

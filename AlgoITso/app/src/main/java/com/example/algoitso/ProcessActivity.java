@@ -3,6 +3,7 @@ package com.example.algoitso;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,9 +21,6 @@ import android.widget.Toast;
 import java.io.InputStream;
 
 public class ProcessActivity extends AppCompatActivity {
-
-    String getImgURL = "";
-    String getImgName = "";
 
     public Bitmap img;
     private static final int REQUEST_CODE = 0;
@@ -85,6 +84,14 @@ public class ProcessActivity extends AppCompatActivity {
             {
                 try{
                     InputStream in = getContentResolver().openInputStream(data.getData());
+                    // 이미지 이름
+                    System.out.println("------------ ProcessActivity Image -----------");
+                    Intent intent = new Intent(this, SelectActivity.class);
+                    String RealName = getRealNameFromURI((data.getData()));
+                    System.out.println(RealName);
+                    intent.putExtra("selectImageName", RealName);
+                    startActivity(intent);
+                    System.out.println("------------ ProcessActivity Image -----------");
                     img = BitmapFactory.decodeStream(in);
                     in.close();
 
@@ -101,39 +108,19 @@ public class ProcessActivity extends AppCompatActivity {
         }
     }
 
-    public void processImage(){
-
-    }
-
-    public String getPathFromUri(Uri uri){
-
-        Cursor cursor = getContentResolver().query(uri, null, null, null, null );
-
-        cursor.moveToNext();
-
-        String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
-
-        return path;
-
-    }
-
     // 선택된 이미지 파일명 가져오기
-    public String getImageNameToUri(Uri data)
-    {
-        String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = getContentResolver().query(data, proj, null, null, null);
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+    private String getRealNameFromURI(Uri returnUri) {
+        String result;
 
-        cursor.moveToFirst();
-
-        String imgPath = cursor.getString(column_index);
-        String imgName = imgPath.substring(imgPath.lastIndexOf("/")+1);
-
-        getImgURL = imgPath;
-        getImgName = imgName;
-
-        return "success";
+        Cursor returnCursor =
+                getContentResolver().query(returnUri, null, null, null, null);
+        /*
+         * Get the column indexes of the data in the Cursor,
+         * move to the first row in the Cursor, get the data,
+         * and display it.
+         */
+        int nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+        returnCursor.moveToFirst();
+        return returnCursor.getString(nameIndex);
     }
-
-
 }

@@ -22,9 +22,7 @@ import java.net.URL;
 public class SelectActivity extends AppCompatActivity {
 
     final String uploadFilePath = "/mnt/sdcard/Pictures/";
-    // 이부분 고칠 것 ***********************************************************
-    final String uploadFileName = "20200524_125551.jpg";
-    // 이부분 고칠 것 ***********************************************************
+    String uploadFileName = "";
     int serverResponseCode = 0;
     String upLoadServerUri = null;
 
@@ -33,9 +31,17 @@ public class SelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
+        Intent intent = getIntent();
+        uploadFileName=intent.getStringExtra("selectImageName");
+        System.out.println("------------ SelectActivity Image ------------");
+        System.out.println(uploadFileName);
+        System.out.println("------------ SelectActivity Image ------------");
         ImageButton btn_pore = (ImageButton) findViewById(R.id.pore_btn);
+
         // 이부분 고칠 것 ***********************************************************
-        upLoadServerUri = "jinho/pore";
+
+        String User_ID = SharedPreference.getAttribute(getApplicationContext(),"useremail");
+        upLoadServerUri = "http://ec2-18-223-44-123.us-east-2.compute.amazonaws.com:3000/" + User_ID + "/pore";
         // 이부분 고칠 것 ***********************************************************
         btn_pore.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
@@ -165,6 +171,9 @@ public class SelectActivity extends AppCompatActivity {
                         }
                     });
                 }
+
+                /////////////////////////////////////////
+
 
                 //close the streams //
                 fileInputStream.close();

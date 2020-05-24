@@ -2,8 +2,10 @@ package com.example.algoitso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.Intent;
+import com.example.algoitso.SharedPreference;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +24,6 @@ public class LoginActivity extends AppCompatActivity{
     private EditText editPasswd;
     private ProgressBar progressBar;
     private ServiceApi service;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +118,7 @@ public class LoginActivity extends AppCompatActivity{
             showProgress(true);
         }
     }
-    private void startLogin(LoginData data){
+    private void startLogin(final LoginData data){
         service.userLogin(data).enqueue(new Callback<LoginResponse>(){
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -127,6 +128,7 @@ public class LoginActivity extends AppCompatActivity{
 
                 if(result.getCode()==200) {
                     Intent intent_login = new Intent(getApplicationContext(), MainActivity.class);
+                    SharedPreference.setAttribute(getApplicationContext(), "useremail", data.userEmail);
                     startActivity(intent_login);
                     finish();
                 }
