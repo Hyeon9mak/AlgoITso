@@ -25,12 +25,14 @@ public class ProcessActivity extends AppCompatActivity {
     public Bitmap img;
     private static final int REQUEST_CODE = 0;
     private ImageView imageView;
+    int flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_process);
 
+        flag = 0;
         imageView = findViewById(R.id.imageView);
 
         ImageButton btn_back = (ImageButton) findViewById(R.id.back_btn);
@@ -55,8 +57,13 @@ public class ProcessActivity extends AppCompatActivity {
         use_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(useintent);
-                finish();
+                if(flag == 0){
+                    Toast.makeText(getApplicationContext(), "사진을 먼저 선택해주세요!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    startActivity(useintent);
+                    finish();
+                }
             }
 
         });
@@ -66,6 +73,7 @@ public class ProcessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent_take = new Intent();
                 intent_take.setType("image/*");
+                flag = 1;
 
                 intent_take.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent_take, REQUEST_CODE);
