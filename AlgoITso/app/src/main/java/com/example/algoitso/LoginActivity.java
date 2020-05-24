@@ -127,8 +127,13 @@ public class LoginActivity extends AppCompatActivity{
                 showProgress(false);
 
                 if(result.getCode()==200) {
+                    String[] Info = new String[4];
+                    Info = result.getInfo();
                     Intent intent_login = new Intent(getApplicationContext(), MainActivity.class);
-                    SharedPreference.setAttribute(getApplicationContext(), "useremail", data.userEmail);
+                    SharedPreference.setAttribute(getApplicationContext(), "useremail", Info[0]);
+                    SharedPreference.setAttribute(getApplicationContext(), "userpwd", Info[1]);
+                    SharedPreference.setAttribute(getApplicationContext(), "username", Info[2]);
+                    SharedPreference.setAttribute(getApplicationContext(), "userphone", Info[3]);
                     startActivity(intent_login);
                     finish();
                 }

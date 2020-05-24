@@ -9,6 +9,9 @@ public class LoginResponse {
     @SerializedName("message")
     private String message;
 
+    @SerializedName("info")
+    private String[] info;
+
     public int getCode() {
         return code;
     }
@@ -17,4 +20,5 @@ public class LoginResponse {
         return message;
     }
 
+    public String[] getInfo() { return info; }
 }

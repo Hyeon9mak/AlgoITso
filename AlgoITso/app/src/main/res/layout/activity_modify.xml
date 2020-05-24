@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModifyActivity"
+    android:background="@drawable/joinbackground"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/back_btn"
+        android:src="@drawable/backbtn"
+        android:background="#29335D"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원정보 수정"
+        android:textSize="50dp"
+        android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:padding="30dp"/>
+
+    <TextView
+        android:id="@+id/text_Email"
+        android:layout_width="300dp"
+        android:layout_height="50sp"
+        android:text="wlsgh6346@naver.com"
+        android:textSize="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#000000"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/edittextbackground"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50sp"
+        android:paddingLeft="20dp"
+        android:id="@+id/edit_Passwd"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="30dp"
+        android:hint="New Password"
+        android:background="@drawable/edittextbackground"
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/text_Name"
+        android:layout_width="300dp"
+        android:layout_height="50sp"
+        android:text="ChoiJinHo"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/edittextbackground"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50sp"
+        android:id="@+id/edit_Phone"
+        android:hint="New PhoneNum"
+        android:paddingLeft="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/edittextbackground"
+        android:inputType="phone"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/modify_btn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/joinbtnbackground"
+        android:text="UPDATE"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_progress"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

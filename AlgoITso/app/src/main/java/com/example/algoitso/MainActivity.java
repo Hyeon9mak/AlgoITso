@@ -50,22 +50,21 @@ public class MainActivity extends AppCompatActivity implements ImageButton.OnCli
 
                 if (id == R.id.side_logout) {
                     Intent intent_logout = new Intent(getApplicationContext(), InitActivity.class);
-                    //SharedPreference.removeAttribute(getApplicationContext(),"useremail");
                     startActivity(intent_logout);
+                    String Shared_ID = SharedPreference.getAttribute(getApplicationContext(),"useremail");
+                    SharedPreference.removeAttribute(getApplicationContext(),Shared_ID);
+
                     finish();
                 } else if (id == R.id.side_editinfo) {
                     //회원 정보 수정 기능
-                    Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
-                } else if (id == R.id.side_album) {
-                    //앨범 기능
-                    Intent intent_album = new Intent();
-                    intent_album.setType("image/*");
-                    intent_album.setAction(Intent.ACTION_GET_CONTENT);
-                    startActivityForResult(intent_album,1);
+                    Intent intent_modify = new Intent(getApplicationContext(), ModifyActivity.class);
+                    startActivity(intent_modify);
                     finish();
                 } else if (id == R.id.side_analysis) {
                     //분석 기능
-                    Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
+                    Intent intent_analysis = new Intent(getApplicationContext(), Selectanalysis.class);
+                    startActivity(intent_analysis);
+                    finish();
                 }
                 return true;
             }

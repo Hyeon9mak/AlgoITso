@@ -21,7 +21,7 @@ import android.widget.Toast;
 import java.io.InputStream;
 
 public class ProcessActivity extends AppCompatActivity {
-
+    public Intent useintent;
     public Bitmap img;
     private static final int REQUEST_CODE = 0;
     private ImageView imageView;
@@ -55,8 +55,7 @@ public class ProcessActivity extends AppCompatActivity {
         use_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent_use = new Intent(getApplicationContext(), SelectActivity.class);
-                startActivity(intent_use);
+                startActivity(useintent);
                 finish();
             }
 
@@ -86,11 +85,10 @@ public class ProcessActivity extends AppCompatActivity {
                     InputStream in = getContentResolver().openInputStream(data.getData());
                     // 이미지 이름
                     System.out.println("------------ ProcessActivity Image -----------");
-                    Intent intent = new Intent(this, SelectActivity.class);
+                    useintent = new Intent(this, SelectActivity.class);
                     String RealName = getRealNameFromURI((data.getData()));
                     System.out.println(RealName);
-                    intent.putExtra("selectImageName", RealName);
-                    startActivity(intent);
+                    useintent.putExtra("selectImageName", RealName);
                     System.out.println("------------ ProcessActivity Image -----------");
                     img = BitmapFactory.decodeStream(in);
                     in.close();

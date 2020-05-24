@@ -8,9 +8,6 @@
         android:id="@+id/side_editinfo"
         android:title="회원정보 수정" />
     <item
-        android:id="@+id/side_album"
-        android:title="앨범" />
-    <item
         android:id="@+id/side_analysis"
         android:title="분석 결과" />
 </menu>
