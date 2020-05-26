@@ -33,7 +33,26 @@
             android:orientation="vertical"
             android:id="@+id/linearLayout">
 
-
+            <ImageView
+                android:layout_width="390dp"
+                android:layout_height="390dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/change"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="개선된 부분은 푸른 색으로 표시됩니다."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:textSize="20dp"
+                android:text="악화된 부분은 붉은 색으로 표시됩니다."/>
 
         </LinearLayout>
     </ScrollView>

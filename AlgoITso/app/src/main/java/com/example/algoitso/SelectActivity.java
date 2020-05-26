@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -35,10 +37,13 @@ public class SelectActivity extends AppCompatActivity {
     int serverResponseCode = 0;
     String upLoadServerUri = null;
     Bitmap bmImg;
+    int poreOrWrinkle;
 
     RelativeLayout relative_select;
     RelativeLayout relative_result;
 
+    ImageButton btn_recommend_img;
+    Button btn_recommend_text;
     ImageButton btn_back;
     ImageView result_img;
     Button btn_retry;
@@ -48,12 +53,19 @@ public class SelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
+        poreOrWrinkle = 0;
+
         relative_result = (RelativeLayout) findViewById(R.id.relative_result);
         relative_select = (RelativeLayout) findViewById(R.id.relative_select);
         result_img = (ImageView) findViewById(R.id.result_img);
         btn_back = (ImageButton) findViewById(R.id.back_btn);
         btn_retry = (Button) findViewById(R.id.retry_btn);
         btn_sel_pic = (Button) findViewById(R.id.sel_pic_btn);
+
+        btn_recommend_img = (ImageButton) findViewById(R.id.recommend_img_btn);
+
+        btn_recommend_text = (Button) findViewById(R.id.recommend_text_btn);
+
 
         Intent intent = getIntent();
         uploadFileName=intent.getStringExtra("selectImageName");
@@ -109,6 +121,24 @@ public class SelectActivity extends AppCompatActivity {
                     th.join();
 
                     result_img.setImageBitmap(bmImg);
+                    btn_recommend_text.setText("320개의 모공 발견!\n이 제품은 어떠세요?");
+                    btn_recommend_text.setTextSize(20);
+                    btn_recommend_text.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent_pore_recommend_text = new Intent(Intent.ACTION_VIEW, Uri.parse("http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=1536513399&GoodsSale=Y&jaehuid=200002657&service_id=estimatedn"));
+                            startActivity(intent_pore_recommend_text);
+                        }
+                    });
+
+                    btn_recommend_img.setImageResource(R.drawable.lg_pore_product);
+                    btn_recommend_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent_pore_recommend = new Intent(Intent.ACTION_VIEW, Uri.parse("http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=1536513399&GoodsSale=Y&jaehuid=200002657&service_id=estimatedn"));
+                            startActivity(intent_pore_recommend);
+                        }
+                    });
                     relative_select.setVisibility(View.INVISIBLE);
                     relative_result.setVisibility(View.VISIBLE);
                 } catch (InterruptedException e) {
@@ -135,6 +165,23 @@ public class SelectActivity extends AppCompatActivity {
                     th.join();
 
                     result_img.setImageBitmap(bmImg);
+                    btn_recommend_text.setText("주름 개선! 이 제품은 어떠세요?");
+                    btn_recommend_text.setTextSize(20);
+                    btn_recommend_text.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent_wrinkle_recommend_text = new Intent(Intent.ACTION_VIEW, Uri.parse("http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=727652157&GoodsSale=Y&jaehuid=200002657&service_id=estimatedn"));
+                            startActivity(intent_wrinkle_recommend_text);
+                        }
+                    });
+                    btn_recommend_img.setImageResource(R.drawable.lg_wrinkle_product);
+                    btn_recommend_img.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent_wrinkle_recommend = new Intent(Intent.ACTION_VIEW, Uri.parse("http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=727652157&GoodsSale=Y&jaehuid=200002657&service_id=estimatedn"));
+                            startActivity(intent_wrinkle_recommend);
+                        }
+                    });
                     relative_select.setVisibility(View.INVISIBLE);
                     relative_result.setVisibility(View.VISIBLE);
                 } catch (InterruptedException e) {
