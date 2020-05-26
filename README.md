@@ -16,13 +16,11 @@
     - 학번 : 2015722010
   
 ## 진행 중인 프로젝트
-- LG 뷰티케어
-  - [Projects 탭](https://github.com/Hyeon9mak/AlgoITso/projects/4) 참고
-- daITso 쇼핑몰
-  - [Projects_탭](https://github.com/Hyeon9mak/AlgoITso/projects/5) 참고
+- (현재 없음)
 
 ## 완료 프로젝트
-- 없음
+- LG 뷰티케어
+  - [Projects 탭](https://github.com/Hyeon9mak/AlgoITso/projects/4) 참고
 
 ## More information of AlgoITso Team
 - [Wiki](https://github.com/Hyeon9mak/AlgoITso/wiki) 참고
